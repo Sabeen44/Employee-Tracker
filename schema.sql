@@ -33,7 +33,6 @@ FOREIGN KEY (manager_id)
    );
 
 
-DESCRIBE hr_db.employee;
 
 
 
