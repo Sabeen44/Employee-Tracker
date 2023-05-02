@@ -92,8 +92,6 @@ inquirer
           { type: "input", name: "managerId", message: "Add Manager Id:" },
         ])
         .then((answers) => {
-          //console.log(answers);
-          // we want to build a strig like this base on user answers: "Customer Rep",4000,2
           insertString = `'${answers.firstName}', '${answers.lastName}', ${answers.roleId},${answers.managerId}`;
           console.log(insertString);
           addEmployee = new AddToEmployee();
