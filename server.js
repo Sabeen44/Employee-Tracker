@@ -4,8 +4,6 @@ const inquirer = require("inquirer");
 
 const mysql = require("mysql2");
 
-//const print = require("console.table");
-
 const PORT = process.env.PORT || 3000;
 const app = express();
 
@@ -31,7 +29,7 @@ inquirer
         { name: "Add a Department", value: "addDept" },
         { name: "Add a role", value: "addRole" },
         { name: "Add an employee", value: "addEmployee" },
-        { name: "Update employee role", value: "addEmployeeRole" },
+        { name: "Update employee role", value: "updateRole" },
       ],
     },
   ])
@@ -106,20 +104,8 @@ inquirer
           addEmployee.insertData("employee", insertString);
         });
     }
-    // employee = answers.options;
-
-    //     if (answers.options === "addRole") {
-    //       showDepartment = new AddToRoles();
-    //     }
-    //     // employee = answers.options;
-
-    //     if (answers.options === "addemployee") {
-    //       showDepartment = new AddToEmployee();
-    //     }
-    //     // employee = answers.options;
   });
 
-// Default response for any other request (Not Found)
 app.use((req, res) => {
   res.status(404).end();
 });

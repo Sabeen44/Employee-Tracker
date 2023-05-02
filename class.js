@@ -32,31 +32,20 @@ class ViewAll {
 class ViewDepartment extends ViewAll {
   constructor() {
     super();
-
-    //this.tableName = "department";
   }
 }
 
 class ViewRoles extends ViewAll {
   constructor() {
     super();
-
-    //this.tableName = "department";
   }
 }
 
 class ViewEmployees extends ViewAll {
   constructor() {
     super();
-
-    //this.tableName = "department";
   }
 }
-
-// class AddToTable {
-//   constructor() {}
-
-// }
 
 class AddToDept {
   constructor() {}
@@ -80,7 +69,7 @@ class AddToRoles {
 
   insertData(tableName, insertString) {
     console.log("insertData function called");
-    //let tableName;
+
     let addQuery = `INSERT INTO ${tableName} (title,salary,department_id) VALUES (${insertString})`;
     console.log(addQuery);
     db.query(addQuery, (err, results) => {
@@ -97,7 +86,7 @@ class AddToEmployee {
 
   insertData(tableName, insertString) {
     console.log("insertData function called");
-    //let tableName;
+
     let addQuery = `INSERT INTO ${tableName} (first_name,last_name,role_id,manager_id) VALUES (${insertString})`;
     console.log(addQuery);
     db.query(addQuery, (err, results) => {
@@ -109,32 +98,6 @@ class AddToEmployee {
   }
 }
 
-// class AddToRoles extends AddToTable {
-//   constructor() {
-//     super();
-//   }
-// }
-// class AddToEmployee extends AddToTable {
-//   constructor() {
-//     super();
-//   }
-// }
-
-//   query() {
-//     db.query(
-//       `INSERT INTO department (name) VALUES (Custodial)`,
-//       (err, results) => {
-//         if (err) {
-//           console.log(err);
-//         }
-//         console.log(results);
-//       }
-//     );
-//   }
-// }
-
-//module.exports.SelectAll = SelectAll;
-//module.exports.InsertDepartment = InsertDepartment;
 module.exports.ViewDepartment = ViewDepartment;
 module.exports.ViewRoles = ViewRoles;
 module.exports.ViewEmployee = ViewEmployees;
