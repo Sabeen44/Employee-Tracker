@@ -62,8 +62,6 @@ inquirer
           { type: "input", name: "newDept", message: "Add Department Name" },
         ])
         .then((answers) => {
-          //console.log(answers);
-          // we want to build a strig like this base on user answers: "Customer Rep",4000,2
           insertString = answers.newDept;
           addDepartment = new AddToDept();
           addDepartment.insertData("department", insertString);
@@ -78,8 +76,6 @@ inquirer
           { type: "input", name: "deptId", message: "Add Dept_Id:" },
         ])
         .then((answers) => {
-          //console.log(answers);
-          // we want to build a strig like this base on user answers: "Customer Rep",4000,2
           insertString = `'${answers.title}', ${answers.salary}, ${answers.deptId}`;
           console.log(insertString);
           addRole = new AddToRoles();
